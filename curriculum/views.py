@@ -4,8 +4,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Hello there")
+    dictionar = {'key':"value"}
+    return render(request, 'base.html', context=dictionar)
 
 
 def resume(request):
-    return render(request, 'resume.html')
+    my_dictionary = {'insert_me': 'Hello there, Im from views.py', 'second': "Second Key"}
+    return render(request, 'curriculum/resume.html', context=my_dictionary)
